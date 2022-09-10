@@ -377,7 +377,7 @@ class Level:
         #Updates
         if self.state == "Game":
             if not self.player_dead:
-                if  self.level_number == 3 or self.level_number == 5:
+                if  self.level_number == 3:
                     if self.movable:
                         self.laybrinth_shifter()
                 else:
