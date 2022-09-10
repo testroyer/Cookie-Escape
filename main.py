@@ -56,4 +56,7 @@ def main():
         pygame.display.update()    
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except:
+        pass
