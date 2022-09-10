@@ -22,6 +22,8 @@ def main():
 
     screen = pygame.display.set_mode((SCREEN_WIDTH , SCREEN_HEIGHT))
     pygame.display.set_caption("Cookie Escape")
+    icon = pygame.image.load(".\\resources\\icon\\player_cookie.ico")
+    pygame.display.set_icon(icon)
 
     level = Level(level1.level_map , screen)
     # tmnf = pygame.Rect(100, 300, 105,80)
