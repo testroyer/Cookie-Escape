@@ -225,9 +225,12 @@ class Level:
             if tile.rect.colliderect(player.rect):
                 if player.direction.x > 0:
                     player.rect.right = tile.rect.left
+                    self.movable = False
+                    self.world_shift_x = 0
                 if player.direction.x < 0:
                     player.rect.left = tile.rect.right
-                self.movable = False
+                    self.movable = False
+                    self.world_shift_x = 0
 
         # for crushables in self.crushable_tiles.sprites():
         #     if crushables.rect.colliderect(player.rect):
@@ -249,8 +252,12 @@ class Level:
             if tile.rect.colliderect(player.rect):
                 if player.direction.y > 0:
                     player.rect.bottom = tile.rect.top
+                    self.movable = False
+                    self.world_shift_y = 0
                 if player.direction.y < 0:
                     player.rect.top = tile.rect.bottom
+                    self.movable = False
+                    self.world_shift_y = 0
 
         # for crushables in self.crushable_tiles.sprites():
         #     if crushables.rect.colliderect(player.rect):
@@ -345,6 +352,8 @@ class Level:
 
     def run(self):
 
+        self.movable = True
+
         # try:
         #     if not self.monster_dead:
         #         self.monster.draw(self.surface)
@@ -377,7 +386,7 @@ class Level:
         #Updates
         if self.state == "Game":
             if not self.player_dead:
-                if  self.level_number == 3:
+                if  self.level_number == 3 or self.level_number == 5:
                     if self.movable:
                         self.laybrinth_shifter()
                 else:
