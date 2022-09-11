@@ -7,7 +7,7 @@ class Lazer(pygame.sprite.Sprite):
         self.image.fill("red")
         self.rect = self.image.get_rect(bottomright = pos)
         self.direction = pygame.math.Vector2(0,-1)
-        self.speed = 2
+        self.speed = 3
 
 
     def update(self):
